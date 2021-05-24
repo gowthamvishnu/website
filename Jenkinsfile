@@ -17,6 +17,16 @@ pipeline {
                   sh "sudo mv -v ./website /var/www/html"
                 }
             }
+                  stage ("testing the website") {
+                  steps {
+                  sh "/home/website.sh"
+                }
+            }
+                  stage ("push to production") {
+                  steps {
+                  sh "sudo ansible-playbook /home/prod.yml"
+                }
+            }
         }
     }
 
