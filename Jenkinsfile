@@ -22,10 +22,5 @@ pipeline {
                   sh "/home/website.sh"
                 }
             }
-         stage ("push to production") {
-             steps {
-                  sh "sudo ansible-playbook /home/prod.yml"
-                }
-            }
         }
    }
