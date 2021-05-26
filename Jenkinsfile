@@ -1,5 +1,5 @@
 pipeline {
-      agent any
+      agent  { label 'master' }
      stages {
          stage ("cloning the git repo") {
              steps {
