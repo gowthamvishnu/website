@@ -17,7 +17,7 @@ pipeline {
                   sh "sudo mv -v ./website /var/www/html"
                 }
             }
-        stage ("testing the website") {
+        stage ("Building docker container") {
            steps {                
                   sh  "sudo docker stop websiteconatiner1"
                   sh  "sudo docker rm -f websiteconatiner1"
