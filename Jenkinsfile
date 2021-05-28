@@ -1,5 +1,5 @@
 pipeline {
-     agent  { label 'dev_node' }
+     agent  { label 'master}' }
      stages {
          stage ("cloning the git repo") {
              steps {
