@@ -17,6 +17,13 @@ pipeline {
                   sh "sudo mv -v ./website /var/www/html"
                 }
             }
+         stage ("Building docker container") {
+           steps { 
+                  sh "sudo docker rmi -f webappimage"
+                  sh  "sudo docker build /var/www/html/website -t webappimage"
+                  sh  "docker run -it -d -p 1002:80 --name websiteconatiner1 webappimage"
+                }
+            }
          stage ("testing the website") {
              steps {
                   sh "/home/website.sh"
