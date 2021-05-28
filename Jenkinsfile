@@ -22,7 +22,7 @@ pipeline {
                   sh  "sudo docker stop websiteconatiner1"
                   sh  "sudo docker rm -f websiteconatiner1"
                   sh  "sudo docker rmi -f webappimage1"
-                  sh  "sudo docker build /var/www/html -t webappimage1"
+                  sh  "sudo docker build /var/www/html/website -t webappimage1"
                   sh  "docker run -it -d -p 1001:80 --name websiteconatiner1 webappimage1"
                 }
             }    
