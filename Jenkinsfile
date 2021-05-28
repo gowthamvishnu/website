@@ -21,7 +21,7 @@ pipeline {
            steps { 
                   sh "sudo docker rmi -f webappimage"
                   sh  "sudo docker build /var/www/html/website -t webappimage"
-                  sh  "docker run -it -d -p 1002:80 --name websiteconatiner1 webappimage"
+                  sh  "docker run -it -d -p 1002:80 --name websiteconatiner webappimage"
                 }
             }
          stage ("testing the website") {
