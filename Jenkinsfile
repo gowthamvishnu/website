@@ -19,6 +19,9 @@ pipeline {
             }
          stage ("Building docker container") {
            steps { 
+                  sh  "sudo docker stop websiteconatiner"
+                  sh "sudo docker rm -f websiteconatiner"
+                  sh "sudo docker rmi -f webappimage"
                   sh  "sudo docker build /var/www/html/website -t webappimage"
                   sh  "docker run -it -d -p 1002:80 --name websiteconatiner webappimage"
                 }
